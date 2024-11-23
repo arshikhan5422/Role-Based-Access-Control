@@ -57,6 +57,21 @@ A web app implementing Role-Based Access Control (RBAC) to manage user permissio
 
 
 ---
+## 📝 **Setup Instructions**
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/arshikhan5422/Role-Based-Access-Control.git
+   cd Role-Based-Access-Control/rbac-ui
+    ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+
+
 
 
 
