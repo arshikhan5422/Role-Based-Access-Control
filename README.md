@@ -35,6 +35,28 @@ A web app implementing Role-Based Access Control (RBAC) to manage user permissio
 - **Development Tools:** Git, npm, VS Code
 
 ---
+## 🖥️ **Screenshots**
+
+### **Home Page**
+![Home Page](src/outputs/home.png)
+
+### **Add User Form**
+![User Management](src/outputs/um.png)
+
+### **Role Management**
+![Role Management](src/outputs/rm.png)
+
+### **Role Management Table**
+![Role Management Table](src/outputs/rm1.png)
+
+### **Permissions Management**
+![Permissions Management](src/outputs/pm.png)
+
+### **Permissions Management Table**
+![Permissions Management Table](src/outputs/pm1.png)
+
+
+---
 
 
 
