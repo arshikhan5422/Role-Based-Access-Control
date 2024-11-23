@@ -85,10 +85,10 @@ A web app implementing Role-Based Access Control (RBAC) to manage user permissio
 ---
 ## 🌟 **Future Enhancements**
 
-1.Add backend authentication for user login.
-2.Implement sorting and filtering in the user table.
-3.Add a dashboard with analytics for administrators.
-4.Integrate live demo or provide deployment URL.
+- Add backend authentication for user login.
+- Implement sorting and filtering in the user table.
+- Add a dashboard with analytics for administrators.
+- Integrate live demo or provide deployment URL.
 
 ---
 ## 🏅 **Evaluation**
@@ -97,9 +97,9 @@ The project demonstrates excellent functionality and adherence to Role-Based Acc
 
 - **Strengths:**
 
-1.Comprehensive user management features.
-2.Modular codebase adhering to React best practices.
-3.Clear and responsive UI design.
+- Comprehensive user management features.
+- Modular codebase adhering to React best practices.
+- Clear and responsive UI design.
 
 - **Documentation:**
 
