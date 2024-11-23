@@ -101,7 +101,7 @@ The project demonstrates excellent functionality and adherence to Role-Based Acc
 - Modular codebase adhering to React best practices.
 - Clear and responsive UI design.
 
-  2.**Documentation:**
+2.**Documentation:**
 
 The README is comprehensive, covering the project overview, setup instructions, and feature explanation. Including details of backend API endpoints or a demo URL would make the documentation even stronger.
 
