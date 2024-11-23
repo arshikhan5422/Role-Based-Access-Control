@@ -95,13 +95,13 @@ A web app implementing Role-Based Access Control (RBAC) to manage user permissio
 
 The project demonstrates excellent functionality and adherence to Role-Based Access Control principles.
 
-- **Strengths:**
+1.**Strengths:**
 
 - Comprehensive user management features.
 - Modular codebase adhering to React best practices.
 - Clear and responsive UI design.
 
-- **Documentation:**
+  2.**Documentation:**
 
 The README is comprehensive, covering the project overview, setup instructions, and feature explanation. Including details of backend API endpoints or a demo URL would make the documentation even stronger.
 
