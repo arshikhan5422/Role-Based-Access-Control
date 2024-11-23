@@ -70,6 +70,20 @@ A web app implementing Role-Based Access Control (RBAC) to manage user permissio
 
    ```bash
    npm install
+   ```
+
+3. **Start the development server:**
+
+   ```bash
+   npm start
+
+   ```
+3. **Open your browser:**
+
+   Visit the app at http://localhost:3000.
+
+---
+
 
 
 
