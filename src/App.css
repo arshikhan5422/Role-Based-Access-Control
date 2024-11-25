@@ -13,7 +13,7 @@ body {
 /* AppBar styles */
 .MuiAppBar-root {
   background-color: #3f51b5;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
 }
 
 .MuiTypography-h6 {
@@ -23,7 +23,7 @@ body {
 /* Drawer Styles */
 .MuiDrawer-paper {
   background-color: #ffffff;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 5px #ffffff;
 }
 
 .MuiListItemText-root {
@@ -50,7 +50,7 @@ body {
 }
 
 .MuiDrawer-paper::-webkit-scrollbar-thumb:hover {
-  background-color: #888;
+  background-color: #fffbfb;
 }
 
 /* Main content area */
