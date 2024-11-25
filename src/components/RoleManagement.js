@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import './RoleManagement.css';  // Import CSS for styling
+import { TextField, Button, MenuItem, Select, InputLabel, FormControl, Card, CardContent, Grid, Typography } from '@mui/material';
+import './RoleManagement.css';  // Import custom CSS for additional styles
 
 const RoleManagement = () => {
   const [roles, setRoles] = useState([]);
@@ -7,68 +8,82 @@ const RoleManagement = () => {
 
   // Function to handle adding a new role
   const addRole = () => {
-    setRoles([...roles, newRole]);  // Add new role to the list
-    setNewRole({ name: "", permissions: [] });  // Reset the form
+    setRoles([...roles, newRole]);
+    setNewRole({ name: "", permissions: [] });
   };
 
   return (
     <div className="role-management">
-      <h2>Role Management</h2>
+      <Typography variant="h4" gutterBottom>Role Management</Typography>
 
       {/* Add Role Form */}
-      <div className="form-container">
-        <h3>Add New Role</h3>
-        <form onSubmit={(e) => { e.preventDefault(); addRole(); }}>
-          <input
-            type="text"
-            placeholder="Role Name"
-            value={newRole.name}
-            onChange={(e) => setNewRole({ ...newRole, name: e.target.value })}
-            required
-          />
-          <select
-            multiple
-            value={newRole.permissions}
-            onChange={(e) =>
-              setNewRole({
-                ...newRole,
-                permissions: Array.from(e.target.selectedOptions, option => option.value)
-              })
-            }
-          >
-            <option value="Read">Read</option>
-            <option value="Write">Write</option>
-            <option value="Delete">Delete</option>
-          </select>
-          <button type="submit">Add Role</button>
-        </form>
-      </div>
+      <Card variant="outlined" className="form-card">
+        <CardContent>
+          <Typography variant="h6">Add New Role</Typography>
+          <form onSubmit={(e) => { e.preventDefault(); addRole(); }}>
+
+            <TextField
+              label="Role Name"
+              variant="outlined"
+              fullWidth
+              value={newRole.name}
+              onChange={(e) => setNewRole({ ...newRole, name: e.target.value })}
+              required
+              margin="normal"
+            />
+
+            <FormControl fullWidth margin="normal">
+              <InputLabel>Permissions</InputLabel>
+              <Select
+                multiple
+                value={newRole.permissions}
+                onChange={(e) => setNewRole({ ...newRole, permissions: e.target.value })}
+                label="Permissions"
+              >
+                <MenuItem value="Read">Read</MenuItem>
+                <MenuItem value="Write">Write</MenuItem>
+                <MenuItem value="Delete">Delete</MenuItem>
+              </Select>
+            </FormControl>
+
+            <Button variant="contained" color="primary" type="submit" fullWidth>
+              Add Role
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
 
       {/* Role List Table */}
-      <div className="table-container">
-        <h3>Role List</h3>
-        <table className="role-table">
-          <thead>
-            <tr>
-              <th>Role Name</th>
-              <th>Permissions</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {roles.map((role, index) => (
-              <tr key={index}>
-                <td>{role.name}</td>
-                <td>{role.permissions.join(", ")}</td>
-                <td>
-                  <button>Edit</button>
-                  <button>Delete</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <Grid container spacing={3} className="table-container">
+        <Grid item xs={12}>
+          <Typography variant="h6">Role List</Typography>
+          <Card variant="outlined">
+            <CardContent>
+              <table className="role-table">
+                <thead>
+                  <tr>
+                    <th>Role Name</th>
+                    <th>Permissions</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {roles.map((role, index) => (
+                    <tr key={index}>
+                      <td>{role.name}</td>
+                      <td>{role.permissions.join(", ")}</td>
+                      <td>
+                        <Button variant="outlined" color="secondary">Edit</Button>
+                        <Button variant="outlined" color="error" style={{ marginLeft: '8px' }}>Delete</Button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
     </div>
   );
 };
