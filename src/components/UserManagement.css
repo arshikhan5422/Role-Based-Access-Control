@@ -44,13 +44,14 @@ th {
 }
 
 .MuiTypography-h4 {
-  color: #a3cfdf;
+  color: #080808;
   font-weight: bold;
 }
 
 .MuiTypography-h6 {
-  color: #8a9ff3;
+  color: #000000;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .MuiTableCell-head {
