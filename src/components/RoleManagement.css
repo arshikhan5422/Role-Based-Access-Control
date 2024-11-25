@@ -1,65 +1,29 @@
 .role-management {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .form-container, .table-container {
-    margin-bottom: 30px;
-  }
-  
-  .form-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  input, select {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .role-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .role-table th, .role-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .role-table th {
-    background-color: #f4f4f4;
-  }
-  
-  .role-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  button {
-    margin-left: 10px;
-  }
-  
+  padding: 20px;
+}
+
+.form-card {
+  margin-bottom: 20px;
+}
+
+.role-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.role-table th, .role-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.role-table th {
+  background-color: #f5f5f5;
+}
+
+.table-container {
+  margin-top: 30px;
+}
+
+button {
+  margin: 5px;
+}
