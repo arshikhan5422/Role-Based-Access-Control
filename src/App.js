@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
 import { 
   Container, 
   Box, 
@@ -11,12 +11,36 @@ import {
   AppBar, 
   Toolbar, 
   Typography, 
-  IconButton 
+  IconButton, 
+  Button
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import UserManagement from './components/UserManagement';
 import RoleManagement from './components/RoleManagement';
 import PermissionsManagement from './components/PermissionsManagement';
+
+const WelcomePage = () => {
+  const navigate = useNavigate();
+
+  return (
+    <Box sx={{ textAlign: 'center', paddingTop: 5 }}>
+      <Typography variant="h4" sx={{ marginBottom: 2 }}>
+        Welcome to the Role-Based Access Control System
+      </Typography>
+      <Typography variant="body1" sx={{ marginBottom: 4 }}>
+        Click below to manage roles, permissions, and users.
+      </Typography>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => navigate("/roles")}
+        sx={{ padding: '10px 20px', fontSize: '16px' }}
+      >
+        Start
+      </Button>
+    </Box>
+  );
+};
 
 function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,18 +50,18 @@ function App() {
   };
 
   const drawer = (
-    <Box sx={{ paddingTop: 14 }}>  {/* Padding to move items down */}
+    <Box sx={{ paddingTop: 14 }}>
       <List>
         <ListItem 
           button 
           component={Link} 
           to="/users" 
           sx={{ 
-            backgroundColor: '#e0f7fa',  // Light cyan background for all buttons
-            '&:hover': { backgroundColor: '#b2ebf2' }, // Slightly darker cyan on hover
-            borderRadius: '8px', // Rounded corners
-            padding: '10px 20px', // Padding for better click area
-            marginBottom: '10px' // Space between buttons
+            backgroundColor: '#e0f7fa', 
+            '&:hover': { backgroundColor: '#b2ebf2' },
+            borderRadius: '8px', 
+            padding: '10px 20px', 
+            marginBottom: '10px' 
           }}
         >
           <ListItemText primary="User Management" />
@@ -48,9 +72,9 @@ function App() {
           component={Link} 
           to="/roles" 
           sx={{ 
-            backgroundColor: '#e0f7fa',  // Same light cyan background
-            '&:hover': { backgroundColor: '#b2ebf2' }, // Slightly darker cyan on hover
-            borderRadius: '8px', // Rounded corners
+            backgroundColor: '#e0f7fa', 
+            '&:hover': { backgroundColor: '#b2ebf2' },
+            borderRadius: '8px', 
             padding: '10px 20px',
             marginBottom: '10px'
           }}
@@ -63,9 +87,9 @@ function App() {
           component={Link} 
           to="/permissions" 
           sx={{ 
-            backgroundColor: '#e0f7fa',  // Same light cyan background
-            '&:hover': { backgroundColor: '#b2ebf2' }, // Slightly darker cyan on hover
-            borderRadius: '8px', // Rounded corners
+            backgroundColor: '#e0f7fa', 
+            '&:hover': { backgroundColor: '#b2ebf2' },
+            borderRadius: '8px', 
             padding: '10px 20px',
             marginBottom: '10px'
           }}
@@ -80,7 +104,6 @@ function App() {
     <Router>
       <CssBaseline />
       <Box sx={{ display: 'flex' }}>
-        {/* AppBar for Mobile View */}
         <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
           <Toolbar>
             <IconButton
@@ -99,7 +122,7 @@ function App() {
               sx={{ 
                 flexGrow: 1, 
                 textAlign: 'center',
-                fontWeight: 'bold' // Make the text bold
+                fontWeight: 'bold' 
               }}
             >
               Role-Based Access Control
@@ -107,7 +130,6 @@ function App() {
           </Toolbar>
         </AppBar>
 
-        {/* Permanent Drawer for Desktop */}
         <Drawer
           variant="permanent"
           sx={{
@@ -122,13 +144,12 @@ function App() {
           {drawer}
         </Drawer>
 
-        {/* Temporary Drawer for Mobile */}
         <Drawer
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
@@ -141,22 +162,21 @@ function App() {
           {drawer}
         </Drawer>
 
-        {/* Main Content */}
         <Box
           component="main"
           sx={{
             flexGrow: 1,
             bgcolor: '#f5f5f5',
             p: 3,
-            marginLeft: { sm: 30 }, // Sidebar space for desktop
+            marginLeft: { sm: 30 },
           }}
         >
-          <Toolbar /> {/* To offset the AppBar height */}
+          <Toolbar />
           <Routes>
             <Route path="/users" element={<UserManagement />} />
             <Route path="/roles" element={<RoleManagement />} />
             <Route path="/permissions" element={<PermissionsManagement />} />
-            <Route path="/" element={<Typography variant="h5">Welcome to the RBAC System!</Typography>} />
+            <Route path="/" element={<WelcomePage />} /> {/* Welcome page with Start button */}
           </Routes>
         </Box>
       </Box>
