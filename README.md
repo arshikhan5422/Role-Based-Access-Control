@@ -38,7 +38,7 @@ A web app implementing Role-Based Access Control (RBAC) to manage user permissio
 ## 🖥️ **Screenshots**
 
 ### **Home Page**
-![Home Page](src/outputs/home5.png)
+![Home Page](src/outputs/home10.png)
 
 ### **Add User Form**
 ![User Management](src/outputs/um5.png)
